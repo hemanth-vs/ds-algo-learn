@@ -3,14 +3,16 @@
  */
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Subsequence {
     public static void main(String[] args) {
         int[] arr = new int[]{3,1,2};
-        ArrayList operations = new ArrayList<Integer>();
+        List<Integer> operations = new ArrayList<>();
+        //List<List<Integer>> entireLists = new ArrayList<>();
         subsequencePrint(0, arr, operations, arr.length);
     }
-    public static void subsequencePrint(int index, int[] arr,ArrayList<Integer> operations, int n) {
+    public static void subsequencePrint(int index, int[] arr, List<Integer> operations, int n) {
         if(index>=n) {
             System.out.println(operations);
             return;
