@@ -1,8 +1,8 @@
+package recursion;
+
 /*
  * reverse an array using recursion
  */
-
-import java.util.Arrays;
 
 public class ReverseArray {
     static int[] arr;

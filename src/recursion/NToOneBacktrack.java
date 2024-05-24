@@ -1,3 +1,5 @@
+package recursion;
+
 /*
  * print from N to 1 without using f(i-1)
  * use backtracking

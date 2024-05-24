@@ -1,3 +1,5 @@
+package recursion;
+
 /*
  * Find sum of n numbers using recursion
  * Two ways: one - passing parameters recursively i.e. passing sum as parameter and printing it out at the base condition and returning it.

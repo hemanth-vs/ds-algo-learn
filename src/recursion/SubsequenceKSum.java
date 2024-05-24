@@ -1,14 +1,17 @@
+package recursion;
+
 /*
  * Given an array, print all the subsequences that produce sum 's'
  */
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class SubsequenceKSum {
     public static void main(String[] args) {
         int[] arr = new int[]{1,2,1};
         int k = 2;
-        ArrayList ds = new ArrayList<Integer>();
+        List<Integer> ds = new ArrayList<>();
         subsequenceK(0, ds, arr, arr.length, 0, k);
 
         subsequenceKFunctional(0, ds, arr, arr.length, 0, k);
@@ -16,7 +19,7 @@ public class SubsequenceKSum {
         System.out.println(subsequenceKCount(0, arr, arr.length, 0, k));
 
     }
-    public static void subsequenceK(int i, ArrayList<Integer> ds, int[] arr, int n, int vSum, int k) {
+    public static void subsequenceK(int i, List<Integer> ds, int[] arr, int n, int vSum, int k) {
         if(i==n) {
             if (vSum == k) System.out.println(ds);
             return;
@@ -30,7 +33,7 @@ public class SubsequenceKSum {
         subsequenceK(i+1, ds, arr, n, vSum, k);
     }
 
-    public static boolean subsequenceKFunctional(int i, ArrayList<Integer> ds, int[] arr, int n, int vSum, int k) {
+    public static boolean subsequenceKFunctional(int i, List<Integer> ds, int[] arr, int n, int vSum, int k) {
         if(i==n) {
             if (vSum == k) {
                 System.out.println(ds);
@@ -41,8 +44,7 @@ public class SubsequenceKSum {
         ds.add(arr[i]);
         if(subsequenceKFunctional(i+1, ds, arr, n, vSum+arr[i], k)) return true;
         ds.remove(ds.size()-1);
-        if(subsequenceKFunctional(i+1, ds, arr, n, vSum, k)) return true;
-        return false;
+        return subsequenceKFunctional(i+1, ds, arr, n, vSum, k);
     }
 
     public static int subsequenceKCount(int i, int[] arr, int n, int vSum, int k) {
