@@ -1,8 +1,4 @@
-/*
- * 
- */
-
-import java.util.ArrayList;
+package recursion;
 
 public class MergeSort {
     public static void main(String[] args) {
@@ -22,31 +18,26 @@ public class MergeSort {
 
     public static void merge(int[] arr, int low, int mid, int high) {
         int[] temp = new int[high-low+1];
-        // ArrayList temp = new ArrayList<Integer>();
         int left = low;
         int right = mid+1;
         int i = 0;
         while (left <= mid && right <= high) {
             if (arr[left] <= arr[right]) {
-                // temp.add(arr[left]);
                 temp[i] = arr[left];
                 i++;
                 left++;
             } else {
-                // temp.add(arr[right]);
                 temp[i] = arr[right];
                 i++;
                 right++;
             }
         }
         while (left <= mid) {
-            // temp.add(arr[left]);
             temp[i] = arr[left];
             i++;
             left++;
         }
         while (right <= high) {
-            // temp.add(arr[right]);
             temp[i] = arr[right];
             i++;
             right++;

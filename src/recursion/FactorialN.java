@@ -1,3 +1,5 @@
+package recursion;
+
 /*
  * Find factorial of n using recursion
  */
